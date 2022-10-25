@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class SignupActivity extends AppCompatActivity {
 
-    TextView txtLogin;
+    TextView txtLogin, txtStationSignup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +23,7 @@ public class SignupActivity extends AppCompatActivity {
 
         //Set components
         txtLogin = (TextView) findViewById(R.id.txtLogin);
+        txtStationSignup = (TextView) findViewById(R.id.txtSignupStation);
 
         //On click events
         txtLogin.setOnClickListener(new View.OnClickListener() {
@@ -31,6 +32,17 @@ public class SignupActivity extends AppCompatActivity {
                 showLogin();
             }
         });
+
+        txtStationSignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showStationRegistration();
+            }
+        });
+    }
+
+    private void showStationRegistration() {
+        startActivity(new Intent(this, StationCreateActivity.class));
     }
 
     private void showLogin() {

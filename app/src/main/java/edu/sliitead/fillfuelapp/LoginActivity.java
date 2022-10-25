@@ -44,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void showHome() {
-        startActivity(new Intent(this, StationActivity.class));
+        startActivity(new Intent(this, QueueActivity.class));
     }
     private void showSignup() {
         startActivity(new Intent(this, SignupActivity.class));

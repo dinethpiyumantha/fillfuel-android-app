@@ -3,4 +3,5 @@
     <string name="motto">Don\'t waste your time in fuel stations</string>
     <string name="select_vehicle">Select a vehicle</string>
     <string name="select_fuel">Select fuel type</string>
+    <string name="select_company">Select the company</string>
 </resources>

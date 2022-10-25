@@ -30,6 +30,8 @@ public class StationActivity extends AppCompatActivity {
         actionBar.hide();
         setContentView(R.layout.activity_station);
 
+        fuelArrayList = new ArrayList<>();
+
         recyclerView = (RecyclerView) findViewById(R.id.rvFuelAvab);
 
         setArray();

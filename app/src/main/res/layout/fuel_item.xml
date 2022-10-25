@@ -6,7 +6,7 @@
     android:layout_marginVertical="5dp"
     android:background="#101010"
     android:orientation="vertical"
-    android:paddingHorizontal="30dp"
+    android:paddingHorizontal="10dp"
     android:paddingVertical="20dp">
 
     <LinearLayout
@@ -32,7 +32,7 @@
             android:fontFamily="@font/roboto_bold"
             android:text="Available"
             android:textColor="#ffffff"
-            android:textSize="18dp" />
+            android:textSize="16dp" />
 
         <Switch
             android:id="@+id/swFuelSwitch"

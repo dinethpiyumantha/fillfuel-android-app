@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignupActivity">
+    android:paddingHorizontal="40dp"
+    tools:context=".StationCreateActivity">
 
     <LinearLayout
         android:id="@+id/lytSignup"
-        android:layout_width="332dp"
-        android:layout_height="561dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,8 +21,9 @@
             android:id="@+id/txtSignupTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
             android:fontFamily="@font/roboto_black"
-            android:text="Create an user account"
+            android:text="Fuel station registration"
             android:textColor="#101010"
             android:textSize="28dp" />
 
@@ -31,27 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:ems="10"
-            android:hint="Nick Name"
-            android:inputType="textPersonName"
-            android:textSize="16dp" />
-
-        <EditText
-            android:id="@+id/edtTxtSignupNic"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:ems="10"
-            android:hint="National ID"
-            android:inputType="textPersonName"
-            android:textSize="16dp" />
-
-        <EditText
-            android:id="@+id/editTextTextPersonName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:ems="10"
-            android:hint="Phone"
+            android:hint="Reg. No."
             android:inputType="textPersonName"
             android:textSize="16dp" />
 
@@ -65,12 +47,42 @@
             android:inputType="textPassword"
             android:textSize="16dp" />
 
+        <EditText
+            android:id="@+id/edtTxtSignupNic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Owner's name"
+            android:inputType="textPersonName"
+            android:textSize="16dp" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Fuel station name"
+            android:inputType="textPersonName"
+            android:textSize="16dp" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Address"
+            android:inputType="textPersonName"
+            android:textSize="16dp" />
+
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="49dp"
             android:layout_marginTop="10dp"
-            android:hint="@string/select_vehicle">
+            android:hint="@string/select_company">
 
             <AutoCompleteTextView
                 android:id="@+id/autoFuelTypeSearch"
@@ -79,24 +91,33 @@
                 android:inputType="none" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="49dp"
-            android:layout_marginTop="10dp"
-            android:hint="@string/select_fuel">
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
 
-            <AutoCompleteTextView
+            <TextView
+                android:id="@+id/textView14"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="none" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:text="Fuel types"
+                android:textColor="#101010"
+                android:textSize="16dp" />
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="OCTANE 92 Petrol" />
+
+        </LinearLayout>
 
         <Button
             android:id="@+id/btnSignup"
             android:layout_width="match_parent"
             android:layout_height="59dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="10dp"
             android:backgroundTint="#101010"
             android:drawableEnd="@drawable/ic_baseline_add_circle_outline_24"
             android:text="Sign Up"
@@ -111,13 +132,13 @@
             android:textColor="#101010" />
 
         <TextView
-            android:id="@+id/txtSignupStation"
+            android:id="@+id/txtSignupCustomer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Sign up as a fuel station"
+            android:text="Sign up as a customer"
             android:textColor="#101010" />
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
