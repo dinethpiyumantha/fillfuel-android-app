@@ -34,7 +34,7 @@
             android:drawableStart="@drawable/ic_baseline_person_24"
             android:drawablePadding="15dp"
             android:ems="10"
-            android:hint="Sri Lanka National ID"
+            android:hint="NIC or Reg No."
             android:inputType="textPersonName" />
 
         <EditText
