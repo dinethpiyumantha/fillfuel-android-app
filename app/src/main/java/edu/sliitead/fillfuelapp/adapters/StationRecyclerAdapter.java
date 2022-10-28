@@ -1,35 +1,44 @@
 package edu.sliitead.fillfuelapp.adapters;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.nio.Buffer;
 import java.util.ArrayList;
 
 import edu.sliitead.fillfuelapp.R;
+import edu.sliitead.fillfuelapp.StationActivity;
 import edu.sliitead.fillfuelapp.data.Station;
 
-public class StationRecyclerAdapter extends RecyclerView.Adapter<StationRecyclerAdapter.MyViewHolder> {
+public class StationRecyclerAdapter
+        extends RecyclerView.Adapter<StationRecyclerAdapter.MyViewHolder> {
 
     private ArrayList<Station> stationArrayList;
+    private Context context;
 
-    public StationRecyclerAdapter(ArrayList<Station> arrayList) {
+    public StationRecyclerAdapter(ArrayList<Station> arrayList, Context cntx) {
         this.stationArrayList = arrayList;
+        this.context = cntx;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         private TextView txtStationName, txtStationAddress, txtStationComp;
+        private Button btnJoinQueue;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             txtStationName = itemView.findViewById(R.id.txtStationCardName);
             txtStationAddress = itemView.findViewById(R.id.txtStationCardAddress);
             txtStationComp = itemView.findViewById(R.id.txtStationCardComp);
+            btnJoinQueue = itemView.findViewById(R.id.btnStationCardJoin);
         }
     }
 

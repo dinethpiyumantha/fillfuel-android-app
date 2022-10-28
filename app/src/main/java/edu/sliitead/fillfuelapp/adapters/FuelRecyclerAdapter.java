@@ -11,14 +11,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import edu.sliitead.fillfuelapp.R;
-import edu.sliitead.fillfuelapp.data.Fuel;
-import edu.sliitead.fillfuelapp.data.Station;
+import edu.sliitead.fillfuelapp.data.FuelData;
+import edu.sliitead.fillfuelapp.models.Fuel;
 
 public class FuelRecyclerAdapter extends RecyclerView.Adapter<FuelRecyclerAdapter.MyViewHolder> {
 
-    private ArrayList<Fuel> fuelArrayList;
+    private ArrayList<FuelData> fuelArrayList;
 
-    public FuelRecyclerAdapter(ArrayList<Fuel> arrayList) {
+    public FuelRecyclerAdapter(ArrayList<FuelData> arrayList) {
         this.fuelArrayList = arrayList;
     }
 
@@ -43,7 +43,7 @@ public class FuelRecyclerAdapter extends RecyclerView.Adapter<FuelRecyclerAdapte
     @Override
     public void onBindViewHolder(@NonNull FuelRecyclerAdapter.MyViewHolder holder, int position) {
         String fuelName = fuelArrayList.get(position).getName();
-        String fuelStatus = fuelArrayList.get(position).getStatus()? "Available": "Unavailable";
+        String fuelStatus = fuelArrayList.get(position).getStatus().toString();
 
         holder.txtFuelName.setText(fuelName);
         holder.txtFuelStatus.setText(fuelStatus);
@@ -53,4 +53,6 @@ public class FuelRecyclerAdapter extends RecyclerView.Adapter<FuelRecyclerAdapte
     public int getItemCount() {
         return fuelArrayList.size();
     }
+
+
 }

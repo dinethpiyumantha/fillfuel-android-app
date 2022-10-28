@@ -7,11 +7,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class StationCreateActivity extends AppCompatActivity {
 
     TextView txtCustomerSignup;
+    Button btnSignupSt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +24,7 @@ public class StationCreateActivity extends AppCompatActivity {
         setContentView(R.layout.activity_station_create);
 
         txtCustomerSignup = (TextView) findViewById(R.id.txtSignupCustomer);
+        btnSignupSt = (Button) findViewById(R.id.btnSignupSt);
 
         txtCustomerSignup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,6 +32,17 @@ public class StationCreateActivity extends AppCompatActivity {
                 showCustomerSignup();
             }
         });
+
+        btnSignupSt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showLogin();
+            }
+        });
+    }
+
+    private void showLogin() {
+        startActivity(new Intent(this, LoginActivity.class));
     }
 
     private void showCustomerSignup() {

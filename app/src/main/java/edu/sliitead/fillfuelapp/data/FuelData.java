@@ -1,11 +1,11 @@
 package edu.sliitead.fillfuelapp.data;
 
-public class Fuel {
+public class FuelData {
 
     private String name;
     private Boolean status;
 
-    public Fuel(String name) {
+    public FuelData(String name) {
         this.name = name;
         this.status = false;
     }

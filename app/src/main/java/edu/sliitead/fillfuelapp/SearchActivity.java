@@ -20,7 +20,7 @@ import edu.sliitead.fillfuelapp.data.Station;
 
 public class SearchActivity extends AppCompatActivity {
 
-    TextView txtSearchTitle;
+    TextView txtSearchTitle, txtSearchResultTitle;
     RecyclerView recyclerView;
 
     //Sample Arrays
@@ -39,6 +39,7 @@ public class SearchActivity extends AppCompatActivity {
 
         //Set components
         txtSearchTitle = (TextView) findViewById(R.id.txtSearchTitle);
+        txtSearchResultTitle = (TextView) findViewById(R.id.txtSearchResultTitle);
         recyclerView = (RecyclerView) findViewById(R.id.rvStationListSearch);
 
         setArray();
@@ -51,10 +52,27 @@ public class SearchActivity extends AppCompatActivity {
                 showHome();
             }
         });
+
+        txtSearchResultTitle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showQueue();
+            }
+        });
+
+        recyclerView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showQueue();
+            }
+        });
     }
 
     private void showHome() {
         startActivity(new Intent(this, HomeActivity.class));
+    }
+    private void showQueue() {
+        startActivity(new Intent(this, QueueActivity.class));
     }
 
     private void setArray() {
@@ -65,7 +83,7 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     private void setAdapter() {
-        StationRecyclerAdapter recyclerAdapter = new StationRecyclerAdapter(stationArrayList);
+        StationRecyclerAdapter recyclerAdapter = new StationRecyclerAdapter(stationArrayList, this);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());

@@ -6,21 +6,23 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
 
 import java.util.ArrayList;
 
 import edu.sliitead.fillfuelapp.adapters.FuelRecyclerAdapter;
-import edu.sliitead.fillfuelapp.adapters.StationRecyclerAdapter;
-import edu.sliitead.fillfuelapp.data.Fuel;
+import edu.sliitead.fillfuelapp.data.FuelData;
+import edu.sliitead.fillfuelapp.models.Fuel;
+import edu.sliitead.fillfuelapp.services.FuelExternalAPICalls;
 
 public class StationActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
 
     //Sample Arrays
-    ArrayList<Fuel> fuelArrayList;
+    ArrayList<FuelData> fuelArrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,14 +38,12 @@ public class StationActivity extends AppCompatActivity {
 
         setArray();
         setAdapter();
-
     }
 
     private void setArray() {
-        //Set array values
-        fuelArrayList.add(new Fuel("OCTANE 92 Petrol"));
-        fuelArrayList.add(new Fuel("OCTANE 95 Petrol"));
-        fuelArrayList.add(new Fuel("Super Diesel"));
+        fuelArrayList.add(new FuelData("OCATNE 95 Petrol"));
+        fuelArrayList.add(new FuelData("OCATNE 92 Petrol"));
+        fuelArrayList.add(new FuelData("LK Super Diesel"));
     }
 
     private void setAdapter() {
@@ -52,5 +52,9 @@ public class StationActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(recyclerAdapter);
+    }
+
+    public void showQueue() {
+        startActivity(new Intent(this, QueueActivity.class));
     }
 }

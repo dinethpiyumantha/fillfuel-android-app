@@ -8,8 +8,8 @@
 
     <LinearLayout
         android:id="@+id/lytLogin"
-        android:layout_width="333dp"
-        android:layout_height="323dp"
+        android:layout_width="331dp"
+        android:layout_height="440dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,6 +56,18 @@
             android:layout_marginTop="20dp"
             android:backgroundTint="#101010"
             android:text="Login"
+            android:textSize="16dp"
+            app:cornerRadius="20dp"
+            app:icon="@drawable/ic_baseline_navigate_next_24"
+            app:iconGravity="textEnd" />
+
+        <Button
+            android:id="@+id/btnLoginAsStation"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="#101010"
+            android:text="Login as a Station"
             android:textSize="16dp"
             app:cornerRadius="20dp"
             app:icon="@drawable/ic_baseline_navigate_next_24"
