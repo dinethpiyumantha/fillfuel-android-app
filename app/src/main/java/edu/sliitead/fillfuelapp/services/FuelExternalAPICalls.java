@@ -39,7 +39,6 @@ public class FuelExternalAPICalls {
                                 String createdAt = jsonObject.getString("createdAt");
                                 String updatedAt = jsonObject.getString("updatedAt");
 
-                                Log.d("FUEL", "Get Fuel > " + id+" "+name+" "+createdAt+" "+updatedAt);
                                 arrayList.add(new Fuel(id, name, createdAt, updatedAt));
                             }
                         } catch (JSONException e) {
